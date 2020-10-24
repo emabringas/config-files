@@ -1,0 +1,20 @@
+[character]
+success_symbol = "[](bold green) "
+error_symbol = "[](bold red) "
+
+[git_status]
+#disabled = true
+conflicted = "🏳"
+ahead = "🏎💨"
+behind = "😰"
+diverged = "😵"
+untracked = "🤷‍"
+#stashed = "📦"
+#modified = "📝"
+staged = '[++\($count\)](green)'
+renamed = "👅"
+deleted = "🗑"
+
+[git_branch]
+style = "208"
+symbol = " "

@@ -1,0 +1,12 @@
+[user]
+    name = "Emanuel Bringas"
+    email = "emab73@gmail.com"
+
+[alias]
+    co = checkout
+    ci = commit
+    st = status
+
+[core]
+    pager = cat
+    filemode = false

@@ -1,0 +1,50 @@
+# Common
+alias ls='ls --color=auto'
+alias ll='ls -lh'
+alias la='ll -a'
+alias ..='cd ..'
+
+# Utils
+alias dumas='du -h --max-depth=1'
+alias sdumas='du -h --max-depth=1 | sort -hr'
+alias lip="ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p'"
+alias eip='dig +short myip.opendns.com @resolver1.opendns.com'
+alias 7df='svn diff --diff-cmd colordiff -x "-y -W 180 --suppress-common-lines" .'
+alias clima='curl --silent  wttr.in/cba\?0pqm'
+alias climae='curl --silent  wttr.in/cba\?npqm'
+alias hlog='hg log -G -l10'
+alias svnclean='svn st | grep '\^\?' | awk "{print $2}" | xargs rm -rf'
+alias mybranches='git for-each-ref refs/remotes --sort=committerdate --format="%(committerdate) %09 %(authorname) %09 %(refname)" | grep Emanuel'
+alias cleanbr='git branch --merged | grep -v master | xargs git branch -d'
+
+# fbuild
+alias fbenv='guake --rename-current-tab=fbuild && cd ~/code/fbuild/bitbucket; . start.sh'
+alias fbpath='cd ~/code/fbuild/bitbucket'
+alias fbclean='rm -rf build install'
+alias fbtargets='fbuild targets | grep fix.*:\ Install'
+
+# Apps
+alias grep='grep --color=auto --exclude-dir=.git'
+alias nano='nano -E -T 4'
+alias g++11='g++ --std=c++11 -Wall -Wextra'
+alias valg='valgrind --leak-check=full --show-reachable=yes --track-origins=yes'
+alias ncmpcpp='guake --rename-current-tab=music && ncmpcpp'
+alias bat='sudo sh -c "echo :WindowsBatch:E::bat::/init: > /proc/sys/fs/binfmt_misc/register"'
+
+# Man
+export LESS_TERMCAP_mb=$'\E[01;31m' # begin blinking
+export LESS_TERMCAP_md=$'\E[01;31m' # begin bold
+export LESS_TERMCAP_me=$'\E[0m' # end mode
+export LESS_TERMCAP_se=$'\E[0m' # end standout-mode
+export LESS_TERMCAP_so=$'\E[01;44m' # begin standout-mode – info
+export LESS_TERMCAP_ue=$'\E[0m' # end underline
+export LESS_TERMCAP_us=$'\E[32m' # begin underline
+export LESSOPEN="| $(which highlight) %s --out-format xterm256 --line-numbers --quiet --force --style zmrok"
+export LESS=" -R"
+alias less='less -m -N -g -i -J --line-numbers --underline-special'
+
+# Functions
+flac2mp3(){ for f in *.flac; do flac -cd "$f" | lame -b 320 - "${f%.*}".mp3; done }
+h2d(){ printf "%d\n" "$@"}
+d2h(){ printf "0x%x\n" "$@"}
+d2b(){ echo "obase=2;$@" | bc }
