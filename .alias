@@ -1,5 +1,4 @@
 # Common
-alias ls='ls --color=auto'
 alias ll='ls -lh'
 alias la='ll -a'
 alias ..='cd ..'
@@ -30,6 +29,13 @@ alias g++11='g++ --std=c++11 -Wall -Wextra'
 alias valg='valgrind --leak-check=full --show-reachable=yes --track-origins=yes'
 alias ncmpcpp='guake --rename-current-tab=music && ncmpcpp'
 alias bat='sudo sh -c "echo :WindowsBatch:E::bat::/init: > /proc/sys/fs/binfmt_misc/register"'
+
+# Color
+if [[ `uname` == "Linux" ]]; then
+    alias ls='ls --color=auto'
+else
+    export CLICOLOR=1
+fi
 
 # Man
 export LESS_TERMCAP_mb=$'\E[01;31m' # begin blinking
