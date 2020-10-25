@@ -1,12 +1,16 @@
 [user]
     name = "Emanuel Bringas"
-    email = "emab73@gmail.com"
 
 [alias]
     co = checkout
     ci = commit
+    ca = commit --amend
     st = status
+    lg = log --graph --date=relative --pretty=tformat:'%Cred%h%Creset - %Cgreen%an%Creset - %s %C(dim white)(%ad)%Creset %C(auto)%d%Creset'
 
 [core]
-    pager = cat
+    pager = less
     filemode = false
+
+[pull]
+    rebase = true
