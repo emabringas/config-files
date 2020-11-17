@@ -3,18 +3,19 @@ success_symbol = "[](bold green) "
 error_symbol = "[](bold red) "
 
 [git_status]
-#disabled = true
-conflicted = "🏳"
-ahead = "🏎💨"
-behind = "😰"
+format='([$all_status$ahead_behind]($style) )'
+conflicted = "🔥$count"
+ahead = "😎$ahead_count"
+behind = "😰$behind_count"
 diverged = "😵"
-untracked = "🤷‍"
-#stashed = "📦"
-#modified = "📝"
-staged = '[++\($count\)](green)'
-renamed = "👅"
-deleted = "🗑"
+untracked = "🤷‍$count"
+stashed = " "
+modified = " $count"
+staged = '[ ⚡$count](green)'
+renamed = "🏴$count"
+deleted = "💀$count"
 
 [git_branch]
 style = "208"
 symbol = " "
+#symbol = " "
